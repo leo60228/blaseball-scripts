@@ -75,7 +75,6 @@ interface StatLeader {
   value: number;
 }
 
-const MAX_LEADERS_PER_CATEGORY = 10;
 const TEAM_GAMES_PER_SEASON: {
   [season: number]: number;
   [career: string]: number;
@@ -490,11 +489,6 @@ function updateCategoryLeaders({
         break;
       }
     }
-  }
-
-  // Trim down leader array if necessary
-  if (leaders.length > MAX_LEADERS_PER_CATEGORY) {
-    leaders.pop();
   }
 
   return leaders;
